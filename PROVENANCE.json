@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-openai-compatible",
+  "version": "1.0.0",
+  "releaseID": "modular-pilot",
+  "source": {
+    "commit": "f91f47882ebaba0d602474fdd5ddc9f249eecce2",
+    "baseCommit": "f91f47882ebaba0d602474fdd5ddc9f249eecce2",
+    "workingTree": false,
+    "inputsSHA256": "9c1a85dfc8ba0dcbd4490ba630563ccf8f4888c8d4443f04fe0ccd406af10dda"
+  },
+  "dependencies": [
+    {
+      "package": "swift-ai-core",
+      "from": "1.0.0"
+    }
+  ],
+  "changes": [
+    {
+      "id": "modular-pilot",
+      "notes": "Generic compatible chat, completion, embedding and image wire behavior without concrete provider dispatch.",
+      "compatibility": "New release unit at 1.0.0; the native generic factory is distinct from the legacy dispatch class."
+    }
+  ],
+  "canonicalDirectory": "Packages/swift-ai-openai-compatible",
+  "upstream": [
+    {
+      "name": "@ai-sdk/openai-compatible",
+      "reviewedVersion": "3.0.78",
+      "ledgerKind": "provider",
+      "evidence": "`AIProviders.openAICompatible`, `OpenAICompatibleProvider`, `OpenAICompatibleTests.swift`",
+      "reviewStatus": "imported-reviewed-with-gaps",
+      "archiveIntegrity": "sha512-8r+qmbIf2YzPbkzlQibbetOmR4GdA/jAHtSJPhUbp6ZMG3PT6cBKwf/85TDyStyPTKtkFZ1qe1ytml3zu69EZQ==",
+      "sourceRef": "npm:@ai-sdk/openai-compatible@3.0.78",
+      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
+      "testRefRelationship": "inventory-snapshot-not-release-verified",
+      "contractFamilies": [
+        "ProviderV4",
+        "LanguageModelV4",
+        "EmbeddingModelV4",
+        "ImageModelV4"
+      ],
+      "contractReview": "M5 pinned published declarations reviewed; native Swift protocols and typed factories are the compatibility contract. Retain existing behavior and documented gaps. npm gitHead absent; test snapshot is not matching-release evidence. See Docs/Migration/M5/upstream-review.json."
+    }
+  ],
+  "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
+  "canonicalInputs": [
+    {
+      "canonicalPath": ".github/workflows/package-check.yml",
+      "sha256": "7ff448e130f7aed96c38accdf828b6d993997ebc5317358347e9a70a649e67ca"
+    },
+    {
+      "canonicalPath": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Package.swift",
+      "sha256": "28734d5df558006d2739b77940d20acbea8262acaae1a46c8fa7a266f8beb3ae"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Porting/map.json",
+      "sha256": "baf2a7e39b935dd96415719b065e63c396e248305972e3d4e1adec9538e788fa"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/README.md",
+      "sha256": "1640d5f7d70fd0fc1b911d42ee86f52b2f9eed47ab6bf12fb5b4537dda92b94d"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleChatCommon.swift",
+      "sha256": "24e4b3f925a8454eab4385c0dfe96ad3dcc2fa92176e7bc9de5ca3afcbcff0a4"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleChatModel.swift",
+      "sha256": "b78112aa3b808816791673b4cec8ab7e7bde7df79c9c48a40e5dcc1d30af2e0a"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleCompletionModel.swift",
+      "sha256": "1b9eba5fcaf8166315cc7eeeac4d13af891ba70cb45315e9eb0a49a65bde1bb1"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleConfiguration.swift",
+      "sha256": "0594577c342dadb6f71c36a6cdbba3cadbaef251be031ae13bb415fb9311d769"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleMediaModels.swift",
+      "sha256": "a6c7df26210260c8b95ff1cef0c188227f8631146abb8f8da1cdfea9309b524e"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleMetadata.swift",
+      "sha256": "cc6e9e5064f5643a7e8b01fd27832e2721c13244de996a7c0943cbc5821c7b18"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleProvider.swift",
+      "sha256": "be9fd7e5268fc4270318d7b95520f51f1cedfc72630b8048fd73b2060ff34126"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleProviderOptions.swift",
+      "sha256": "97a0072ea2ae3a6b55930319aac449e65f9475d303f2a9c3740aecce0ad73408"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/WireKeyMapping.swift",
+      "sha256": "cc0e77f41e96354407f3f69c185272eb9371eb13b8b324eb430c8fba446f70b0"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Tests/SwiftAIOpenAICompatibleTests/FixtureDownloadTransport.swift",
+      "sha256": "0097a2ee7749374558a27b4f802800757b97f920d258ed14fd696f791eccc97f"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Tests/SwiftAIOpenAICompatibleTests/OpenAICompatibleWarningTests.swift",
+      "sha256": "29a3667e91e6b19de9adf02955ed963d0d56087f74781b1786eee7c756597307"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Tests/SwiftAIOpenAICompatibleTests/OpenAIStyleStreamingToolCallsTests.swift",
+      "sha256": "46d722782b5d17ae39f12d759973b4afeb7cbdc53534f985cba066b23d9f9c2a"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Tests/SwiftAIOpenAICompatibleTests/TestSupport.swift",
+      "sha256": "ce1e721bb60840284e5c8ba3b982b181ede66a49c05d09d7e21a8b9afd64cac0"
+    }
+  ]
+}

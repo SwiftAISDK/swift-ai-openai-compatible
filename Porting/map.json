@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-openai-compatible",
+  "status": "coarse-import",
+  "upstream": [
+    {
+      "name": "@ai-sdk/openai-compatible",
+      "implementation": [
+        "packages/openai-compatible/src"
+      ],
+      "tests": [
+        "packages/openai-compatible/src/chat/convert-openai-compatible-chat-usage.test.ts",
+        "packages/openai-compatible/src/chat/convert-to-openai-compatible-chat-messages.test.ts",
+        "packages/openai-compatible/src/chat/openai-compatible-chat-content-array.test.ts",
+        "packages/openai-compatible/src/chat/openai-compatible-chat-language-model.test.ts",
+        "packages/openai-compatible/src/chat/openai-compatible-prepare-tools.test.ts",
+        "packages/openai-compatible/src/completion/openai-compatible-completion-language-model.test.ts",
+        "packages/openai-compatible/src/embedding/openai-compatible-embedding-model.test.ts",
+        "packages/openai-compatible/src/image/openai-compatible-image-model.test.ts",
+        "packages/openai-compatible/src/lazy-schemas.test.ts",
+        "packages/openai-compatible/src/openai-compatible-provider.test.ts",
+        "packages/openai-compatible/src/utils/to-camel-case.test.ts"
+      ]
+    }
+  ],
+  "swift": {
+    "sources": [
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleChatCommon.swift",
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleChatModel.swift",
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleCompletionModel.swift",
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleConfiguration.swift",
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleMediaModels.swift",
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleMetadata.swift",
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleProvider.swift",
+      "Sources/SwiftAIOpenAICompatible/OpenAICompatibleProviderOptions.swift",
+      "Sources/SwiftAIOpenAICompatible/WireKeyMapping.swift"
+    ],
+    "tests": [
+      "Tests/SwiftAIOpenAICompatibleTests/FixtureDownloadTransport.swift",
+      "Tests/SwiftAIOpenAICompatibleTests/OpenAICompatibleWarningTests.swift",
+      "Tests/SwiftAIOpenAICompatibleTests/OpenAIStyleStreamingToolCallsTests.swift",
+      "Tests/SwiftAIOpenAICompatibleTests/TestSupport.swift"
+    ],
+    "resources": []
+  },
+  "differences": [
+    {
+      "kind": "native-adaptation",
+      "reason": "Preserve Swift async/await, Sendable, Foundation transport and existing documented gaps; see Docs/CoreV6Parity.md and PortingStatus.md."
+    }
+  ],
+  "reviewNote": "Imported M0 file ownership and upstream test inventory. These are candidate relationships, not claims that every listed upstream test is ported; refine into behavior mappings during extraction.",
+  "canonicalOnlyReferences": [
+    {
+      "kind": "sources",
+      "path": "Packages/swift-ai-core/Sources/SwiftAIProviderUtilities/OpenAIStyleStreamingToolCalls.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Packages/swift-ai-core/Sources/SwiftAITransport/LanguageStreamParsing.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Packages/swift-ai-openai/Sources/SwiftAIOpenAI/OpenAICompatibleMetadata.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Sources/SwiftAISDK/ImageInputCapabilities.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Sources/SwiftAISDK/Models/OpenAICompatibleChatCommon.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Sources/SwiftAISDK/Models/OpenAICompatibleChatUsage.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Sources/SwiftAISDK/Models/OpenAICompatibleConfig.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Sources/SwiftAISDK/Models/OpenAICompatibleProviderOptions.swift"
+    },
+    {
+      "kind": "sources",
+      "path": "Sources/SwiftAISDK/Models/OpenAICompatibleURL.swift"
+    }
+  ],
+  "canonicalDirectory": "Packages/swift-ai-openai-compatible"
+}
