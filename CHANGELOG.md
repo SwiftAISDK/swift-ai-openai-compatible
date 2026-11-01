@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0
+## 1.1.0
 
-- Generic compatible chat, completion, embedding and image wire behavior without concrete provider dispatch.
-  Compatibility: New release unit at 1.0.0; the native generic factory is distinct from the legacy dispatch class.
+- Async API key suppliers resolve before each authenticated Chat/Completion/Embedding/Image request and trusted image download, retaining explicit auth overrides and foreign-origin stripping. Add native mapReasoning callback for portable reasoning only; explicit provider reasoningEffort bypasses the callback. Misplaced completion system errors include their content. Reviewed upstream: @ai-sdk/openai-compatible 3.0.78 to 3.0.82. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.
+  Compatibility: Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation.

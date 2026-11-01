@@ -1,46 +1,46 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-openai-compatible",
-  "version": "1.0.0",
-  "releaseID": "modular-pilot",
+  "version": "1.1.0",
+  "releaseID": "weekly-upstream-20261101",
   "source": {
-    "commit": "f91f47882ebaba0d602474fdd5ddc9f249eecce2",
-    "baseCommit": "f91f47882ebaba0d602474fdd5ddc9f249eecce2",
+    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
     "workingTree": false,
-    "inputsSHA256": "9c1a85dfc8ba0dcbd4490ba630563ccf8f4888c8d4443f04fe0ccd406af10dda"
+    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.0.0"
+      "from": "1.2.0"
     }
   ],
   "changes": [
     {
-      "id": "modular-pilot",
-      "notes": "Generic compatible chat, completion, embedding and image wire behavior without concrete provider dispatch.",
-      "compatibility": "New release unit at 1.0.0; the native generic factory is distinct from the legacy dispatch class."
+      "id": "weekly-upstream-20261101",
+      "notes": "Async API key suppliers resolve before each authenticated Chat/Completion/Embedding/Image request and trusted image download, retaining explicit auth overrides and foreign-origin stripping. Add native mapReasoning callback for portable reasoning only; explicit provider reasoningEffort bypasses the callback. Misplaced completion system errors include their content. Reviewed upstream: @ai-sdk/openai-compatible 3.0.78 to 3.0.82. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
+      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-openai-compatible",
   "upstream": [
     {
       "name": "@ai-sdk/openai-compatible",
-      "reviewedVersion": "3.0.78",
+      "reviewedVersion": "3.0.82",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.openAICompatible`, `OpenAICompatibleProvider`, `OpenAICompatibleTests.swift`",
+      "evidence": "`AIProviders.openAICompatible`, `OpenAICompatibleProvider`, `OpenAICompatibleTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-8r+qmbIf2YzPbkzlQibbetOmR4GdA/jAHtSJPhUbp6ZMG3PT6cBKwf/85TDyStyPTKtkFZ1qe1ytml3zu69EZQ==",
-      "sourceRef": "npm:@ai-sdk/openai-compatible@3.0.78",
-      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
-      "testRefRelationship": "inventory-snapshot-not-release-verified",
+      "archiveIntegrity": "sha512-wey0CbujWRkZbbrJjw/GJHyjXpt0v44PQKaTGTVGmigqnM057G7GQHDyZQQj9O0lICY5qJxzpn4wCSftT8BSQg==",
+      "sourceRef": "npm:@ai-sdk/openai-compatible@3.0.82",
+      "testRef": "9b603d36186b75e58d5479445a96c76f6e2d2700",
+      "testRefRelationship": "matching-release",
       "contractFamilies": [
-        "ProviderV4",
-        "LanguageModelV4",
         "EmbeddingModelV4",
-        "ImageModelV4"
+        "ImageModelV4",
+        "LanguageModelV4",
+        "ProviderV4"
       ],
-      "contractReview": "M5 pinned published declarations reviewed; native Swift protocols and typed factories are the compatibility contract. Retain existing behavior and documented gaps. npm gitHead absent; test snapshot is not matching-release evidence. See Docs/Migration/M5/upstream-review.json."
+      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -63,7 +63,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Porting/map.json",
-      "sha256": "baf2a7e39b935dd96415719b065e63c396e248305972e3d4e1adec9538e788fa"
+      "sha256": "af908aa03e32fd48abc3e71744e1d88ad6f65f77f49a1d08a0eb53abbe2ed483"
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/README.md",
@@ -75,15 +75,15 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleChatModel.swift",
-      "sha256": "b78112aa3b808816791673b4cec8ab7e7bde7df79c9c48a40e5dcc1d30af2e0a"
+      "sha256": "ccbe7bd0faf44f94444a81e007c4487f024be8d34d1cba09953f3c9b4f94afe7"
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleCompletionModel.swift",
-      "sha256": "1b9eba5fcaf8166315cc7eeeac4d13af891ba70cb45315e9eb0a49a65bde1bb1"
+      "sha256": "25ea4bd99906e1203d353e80aab8f0d99c64b5e2a47e8e401857548c8eab3085"
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleConfiguration.swift",
-      "sha256": "0594577c342dadb6f71c36a6cdbba3cadbaef251be031ae13bb415fb9311d769"
+      "sha256": "a4d3b883714c9605dffb5e299b7d0af285384f50e237373c8beefa8234d5f8f6"
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleMediaModels.swift",
@@ -95,7 +95,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleProvider.swift",
-      "sha256": "be9fd7e5268fc4270318d7b95520f51f1cedfc72630b8048fd73b2060ff34126"
+      "sha256": "83341c7e5472d2cf96585649aa39a07e3f324a5188c482fd71e93368b83f80f0"
     },
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Sources/SwiftAIOpenAICompatible/OpenAICompatibleProviderOptions.swift",
@@ -120,6 +120,10 @@
     {
       "canonicalPath": "Packages/swift-ai-openai-compatible/Tests/SwiftAIOpenAICompatibleTests/TestSupport.swift",
       "sha256": "ce1e721bb60840284e5c8ba3b982b181ede66a49c05d09d7e21a8b9afd64cac0"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-openai-compatible/Tests/SwiftAIOpenAICompatibleTests/Weekly20261101CompatibleTests.swift",
+      "sha256": "9b6d76117da2496217d30de2eb8c270f47503e809ea0a368217603039bdb117a"
     }
   ]
 }
