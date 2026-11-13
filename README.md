@@ -1,5 +1,5 @@
 <!-- Generated distribution; edit the canonical repository. -->
-# swift-ai-openai-compatible 1.2.0
+# swift-ai-openai-compatible 1.3.0
 
 Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions are in PROVENANCE.json and Porting/.
 
@@ -8,7 +8,7 @@ Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions
 Add this package to your SwiftPM dependencies:
 
 ```swift
-.package(url: "https://github.com/SwiftAISDK/swift-ai-openai-compatible.git", from: "1.2.0")
+.package(url: "https://github.com/SwiftAISDK/swift-ai-openai-compatible.git", from: "1.3.0")
 ```
 
 Products: `SwiftAIOpenAICompatible`.
@@ -57,6 +57,10 @@ environment variables. It is distinct from the legacy aggregate class with the
 same name; qualify that type when importing both modules. OpenAI model catalog
 rules and concrete host policies are supplied by adapters rather than importing
 those provider implementations here.
+
+## Current provider behavior
+
+`OpenAICompatibleChatModel.prepareRequest(_:)` returns `(body: JSONValue, warnings: [AIWarning])` for unary generation without sending a request. It applies request transforms and reasoning/option warnings while omitting streaming fields. `convertResponse(body:providerOptions:)` converts an already received JSON body through the same content, tool, usage and metadata logic; the native metadata wrappers remain empty for absent HTTP information. A custom model configuration can set `downloadTransport` for unauthenticated image URLs.
 
 ## Porting and verification
 
