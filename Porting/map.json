@@ -38,6 +38,7 @@
     ],
     "tests": [
       "Tests/SwiftAIOpenAICompatibleTests/FixtureDownloadTransport.swift",
+      "Tests/SwiftAIOpenAICompatibleTests/OpenAICompatibleChatUpstreamParityTests.swift",
       "Tests/SwiftAIOpenAICompatibleTests/OpenAICompatibleWarningTests.swift",
       "Tests/SwiftAIOpenAICompatibleTests/OpenAIStyleStreamingToolCallsTests.swift",
       "Tests/SwiftAIOpenAICompatibleTests/TestSupport.swift",
