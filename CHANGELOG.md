@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0
+## 1.4.1
 
-- Provider-namespaced options pass through unchanged; `openaiCompatible` options are limited to upstream's keys and validated. Function tools send only their input schema; streamed tool calls whose name arrives later are buffered, missing IDs are generated, empty deltas no longer open parts and `created: 0` no longer becomes a 1970 timestamp. Missing usage counts are 0, completions map finish reasons and metadata like upstream, embeddings forward only `dimensions` and `user`, and image edit errors use the provider message. `OpenAICompatibleImageModel.maxImagesPerCall` is public.
-  Compatibility: Source-compatible; changes are additive. Request bodies, results, warnings and errors change to match the reviewed upstream package.
+- Align the provider request identity with @ai-sdk/openai-compatible 3.0.94 after comparing source, declarations and matching-release tests against 3.0.92. Offline validation passed: node Scripts/test-packages.mjs (56 packages, 3672 owning tests and 1760 compatibility tests), generation, tooling, isolation, and version selection. See Docs/Archive/WeeklyUpstreamAudit20261122.md for retained gaps. Paid provider calls were skipped.
+  Compatibility: Source-compatible request-header update.
